@@ -1,12 +1,11 @@
 import { Heading, Stack, Text, Image, Center } from "@chakra-ui/react";
-import { Image as NextImage } from "next/image";
+import NextImage from "next/image";
 
 const Feature = ({ imageSrc, alt, title, textContent }) => {
   return (
     <Stack textAlign="center">
       <Center>
-        <Image
-          as={NextImage}
+        <NextImage
           src={imageSrc}
           width="280px"
           alt={alt}

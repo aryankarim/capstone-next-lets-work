@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/dist/client/router";
-import { Image as NextImage } from "next/image";
+import NextImage from "next/image";
 import NextLink from "next/link";
 import { auth } from "../../firebase/firebase";
 
@@ -98,8 +98,7 @@ export default function TopSection() {
         <Box px={0}>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={16}>
             <Center>
-              <Image
-                as={NextImage}
+              <NextImage
                 src="/images/womanvectorpaint.svg"
                 height={251.37}
                 width={318}
@@ -107,25 +106,21 @@ export default function TopSection() {
               />
             </Center>
 
-            <Center>
-              <Image
-                as={NextImage}
+            <Center display={["none", "none", "block", "block"]}>
+              <NextImage
                 src="/images/Team-amico 1.svg"
                 height={251.37}
                 width={318}
                 alt="team"
-                display={{ base: "none", md: "block" }}
               />
             </Center>
 
-            <Center>
-              <Image
-                as={NextImage}
+            <Center display={["none", "none", "block", "block"]}>
+              <NextImage
                 src="/images/jobhuntvectorpaint.svg"
                 height={251.37}
                 width={318}
                 alt="jobhunt"
-                display={{ base: "none", md: "block" }}
               />
             </Center>
           </SimpleGrid>

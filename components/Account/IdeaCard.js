@@ -7,7 +7,7 @@ import {
   Avatar,
   Skeleton,
 } from "@chakra-ui/react";
-import { Image as NextImage } from "next/image";
+import NextImage from "next/image";
 import NextLink from "next/link";
 
 const IdeaCard = ({ ideaImage, title, userImage, username, date, ideaId }) => {
@@ -35,16 +35,17 @@ const IdeaCard = ({ ideaImage, title, userImage, username, date, ideaId }) => {
           height={ideaImage ? "218px" : "auto"}
           width="300px"
         >
-          {ideaImage && (
-            <Image
-              as={NextImage}
+          {ideaImage ? (
+            <NextImage
               src={ideaImage}
               alt={title}
               objectFit="cover"
-              width="100%"
-              height="100%"
-              fallbackSrc={<Skeleton w="100%" h="100%" />}
+              width="100"
+              height="100"
+              layout="responsive"
             />
+          ) : (
+            <Skeleton w="100%" h="100%" />
           )}
         </Box>
         <Flex pl={4} mb={4} direction="column">
