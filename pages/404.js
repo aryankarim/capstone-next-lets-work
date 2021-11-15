@@ -26,11 +26,11 @@ const Custom404 = () => {
         dir={router().locale === "ar" ? "rtl" : "ltr"}
         align="center"
       >
-        <Image
+        <NextImage
           flex="1"
-          as={NextImage}
-          src="images/404.svg"
-          width={{ base: "24rem", lg: "429px" }}
+          src="/images/404.svg"
+          width={350}
+          height={350}
           alt="404"
           mr={{ base: 0, lg: 24 }}
         />

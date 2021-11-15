@@ -48,13 +48,12 @@ export default function About() {
           </Text>
         </Center>
         <Center>
-          <Image
-            as={NextImage}
-            src="images/Goodteam.svg"
-            width={{ sm: "24rem", lg: "429px" }}
-            alt="goodteambro"
-            height={{ sm: "24rem", lg: "429px" }}
+          <NextImage
+            src="/images/Goodteam.svg"
+            width={400}
+            height={400}
             mt="0"
+            alt="goodteambro"
           />
         </Center>
       </Stack>
@@ -66,13 +65,12 @@ export default function About() {
         alignItems="center"
       >
         <Stack>
-          <Image
-            as={NextImage}
-            src="images/Team-amico 1.svg"
-            width={{ base: "24rem", lg: "429px" }}
-            alt="goodteambro"
-            height={{ base: "24rem", lg: "429px" }}
+          <NextImage
+            src="/images/Team-amico 1.svg"
+            width={400}
+            height={400}
             mt="0"
+            alt="goodteambro"
           />
         </Stack>
         <Container>
@@ -119,25 +117,25 @@ export default function About() {
         <Box p={4}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={16}>
             <Feature
-              imageSrc="images/innovative.svg"
+              imageSrc="/images/innovative.svg"
               alt="feature1"
               title={t("use")}
               textContent={t("use_text")}
             />
             <Feature
-              imageSrc="images/startup.svg"
+              imageSrc="/images/startup.svg"
               alt="feature2"
               title={t("share")}
               textContent={t("share_text")}
             />
             <Feature
-              imageSrc="images/Information flow_Monochromatic.svg"
+              imageSrc="/images/Information flow_Monochromatic.svg"
               alt="feature3"
               title={t("find")}
               textContent={t("find_text")}
             />
             <Feature
-              imageSrc="images/web.svg"
+              imageSrc="/images/web.svg"
               alt="feature4"
               title={t("communication")}
               textContent={t("communication_text")}

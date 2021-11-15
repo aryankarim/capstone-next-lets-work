@@ -199,11 +199,11 @@ export default function Search({ users }) {
       </Stack>
       {filteredPosts.length === 0 && status === "success" ? (
         <Center>
-          <Image
-            as={NextImage}
-            src="images/noResult.png"
-            width={{ base: "24rem", lg: "429px" }}
-            alt=""
+          <NextImage
+            src="/images/noResult.png"
+            width="500"
+            height="400"
+            alt="no result image"
           />
         </Center>
       ) : (

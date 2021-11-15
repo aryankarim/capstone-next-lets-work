@@ -5,8 +5,7 @@ const Feature = ({ imageSrc, alt, title, textContent }) => {
   return (
     <Stack textAlign="center">
       <Center>
-        <Image
-          as={NextImage}
+        <NextImage
           src={imageSrc}
           width="280px"
           alt={alt}
