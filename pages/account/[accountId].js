@@ -108,6 +108,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       params,
+      ...(await serverSideTranslations(context.locale, ["navbar", "profile"])),
     },
   };
 }
