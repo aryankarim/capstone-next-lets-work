@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default function Id({ params }) {
   return (
     <div>
@@ -12,6 +14,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       params,
+      ...(await serverSideTranslations(context.locale, ["navbar"])),
     },
   };
 }
