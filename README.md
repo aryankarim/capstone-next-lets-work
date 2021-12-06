@@ -28,7 +28,7 @@ Manage projects\
 Join other projects\
 Find projects and ideas easily with Advanced Search\
 Like and Comment on posts\
-Customize their profile\
+Customize your profile\
 Receive realtime notification
 
 
