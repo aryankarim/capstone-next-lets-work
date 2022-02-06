@@ -55,6 +55,7 @@ const App = ({ Component, pageProps }) => {
           content="Connect with people who are driven by the same idea as yours."
         />
         <meta
+          name="image"
           property="og:image"
           content="https://letsswork.vercel.app/thumbnail.png"
         />
