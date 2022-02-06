@@ -55,8 +55,9 @@ const App = ({ Component, pageProps }) => {
           content="Connect with people who are driven by the same idea as yours."
         />
         <meta
+          name="image"
           property="og:image"
-          content="https://letsswork.vercel.app/images/Team-amico%201.svg"
+          content="https://letsswork.vercel.app/thumbnail.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -68,7 +69,7 @@ const App = ({ Component, pageProps }) => {
         />
         <meta
           property="twitter:image"
-          content="https://letsswork.vercel.app/images/Team-amico%201.svg"
+          content="https://letsswork.vercel.app/thumbnail.png"
         />
         <link
           rel="stylesheet"
