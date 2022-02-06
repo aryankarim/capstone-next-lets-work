@@ -54,7 +54,6 @@ export default function Home({
           name="description"
           content="Connect with people who are driven by the same idea as yours."
         />
-
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://letsswork.vercel.app/" />
         <meta property="og:title" content="Let's Work" />
@@ -64,8 +63,7 @@ export default function Home({
         />
         <meta
           property="og:image"
-          content="https://letsswork.vercel.app/images/Team-amico%201.svg"
-        />
+          content="https://letsswork.vercel.app/images/Team-amico%201.svg"/>
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://letsswork.vercel.app/" />
