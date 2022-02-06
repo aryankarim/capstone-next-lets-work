@@ -15,7 +15,7 @@ import { wrapper } from "../store";
 import { collection, getDocs } from "@firebase/firestore";
 import { auth, db } from "../firebase/firebase";
 import moment from "moment";
-import CustomHead from "../components/CustomHead";
+import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/dist/client/router";
 
@@ -46,85 +46,103 @@ export default function Home({
     //eslint-disable-next-line
   }, [dispatch]);
   return (
-    <Box dir={router.locale === "ar" ? "rtl" : "ltr"} mb="20">
-      <CustomHead title="Home" >
-      <meta name="title" content="Let's Work"/>
-      <meta name="description" content="Connect with people who are driven by the same idea as yours."/>
-
-      <meta property="og:type" content="website"/>
-      <meta property="og:url" content="https://letsswork.vercel.app/"/>
-      <meta property="og:title" content="Let's Work"/>
-      <meta property="og:description" content="Connect with people who are driven by the same idea as yours."/>
-      <meta property="og:image" content="https://letsswork.vercel.app/images/Team-amico%201.svg"/>
-
-      <meta property="twitter:card" content="summary_large_image"/>
-      <meta property="twitter:url" content="https://letsswork.vercel.app/"/>
-      <meta property="twitter:title" content="Let's Work"/>
-      <meta property="twitter:description" content="Connect with people who are driven by the same idea as yours."/>
-      <meta property="twitter:image" content="https://letsswork.vercel.app/images/Team-amico%201.svg"/>
-      </CustomHead>
-      <TopSection />
-      <Stack spacing="6" align="center">
-        <PostList
-          users={users}
-          status={topPosts.status}
-          list={t("top_projects")}
-          posts={topPosts.data.length > 0 ? topPosts.data : initialTopPosts}
+    <>
+      <Head>
+        <title>Home</title>
+        <meta name="title" content="Let's Work" />
+        <meta
+          name="description"
+          content="Connect with people who are driven by the same idea as yours."
         />
-        {lastTopPost && topPosts.data.length % 3 === 0 && (
-          <Button
-            w="30%"
-            variant="secondary"
-            onClick={() => dispatch(getTopProjects())}
-          >
-            {t("load")}{" "}
-          </Button>
-        )}
-      </Stack>
-      {auth.currentUser && (
-        <Box>
-          <Stack align="center">
-            <PostList
-              users={users}
-              list={t("favorite_projects")}
-              posts={favPosts.data}
-              status={favPosts.status}
-            />
 
-            {lastFavPost && favPosts.data.length % 3 === 0 && (
-              <Button
-                w="30%"
-                variant="secondary"
-                onClick={() => dispatch(getFavPosts())}
-              >
-                {t("load")}{" "}
-              </Button>
-            )}
-          </Stack>
-          <Stack align="center" spacing="6">
-            <PostList
-              users={users}
-              status={mostRecentPosts.status}
-              list={t("new_projects")}
-              posts={
-                mostRecentPosts.data.length > 0
-                  ? mostRecentPosts.data
-                  : initialMostRecentPosts
-              }
-            />
-            {lastRecentPost && mostRecentPosts.data.length % 3 === 0 && (
-              <Button
-                w="30%"
-                variant="secondary"
-                onClick={() => dispatch(getMostRecentProjects())}
-              >
-                {t("load")}{" "}
-              </Button>
-            )}
-          </Stack>
-        </Box>
-      )}
-    </Box>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://letsswork.vercel.app/" />
+        <meta property="og:title" content="Let's Work" />
+        <meta
+          property="og:description"
+          content="Connect with people who are driven by the same idea as yours."
+        />
+        <meta
+          property="og:image"
+          content="https://letsswork.vercel.app/images/Team-amico%201.svg"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://letsswork.vercel.app/" />
+        <meta property="twitter:title" content="Let's Work" />
+        <meta
+          property="twitter:description"
+          content="Connect with people who are driven by the same idea as yours."
+        />
+        <meta
+          property="twitter:image"
+          content="https://letsswork.vercel.app/images/Team-amico%201.svg"
+        />
+      </Head>
+      <Box dir={router.locale === "ar" ? "rtl" : "ltr"} mb="20">
+        <TopSection />
+        <Stack spacing="6" align="center">
+          <PostList
+            users={users}
+            status={topPosts.status}
+            list={t("top_projects")}
+            posts={topPosts.data.length > 0 ? topPosts.data : initialTopPosts}
+          />
+          {lastTopPost && topPosts.data.length % 3 === 0 && (
+            <Button
+              w="30%"
+              variant="secondary"
+              onClick={() => dispatch(getTopProjects())}
+            >
+              {t("load")}{" "}
+            </Button>
+          )}
+        </Stack>
+        {auth.currentUser && (
+          <Box>
+            <Stack align="center">
+              <PostList
+                users={users}
+                list={t("favorite_projects")}
+                posts={favPosts.data}
+                status={favPosts.status}
+              />
+
+              {lastFavPost && favPosts.data.length % 3 === 0 && (
+                <Button
+                  w="30%"
+                  variant="secondary"
+                  onClick={() => dispatch(getFavPosts())}
+                >
+                  {t("load")}{" "}
+                </Button>
+              )}
+            </Stack>
+            <Stack align="center" spacing="6">
+              <PostList
+                users={users}
+                status={mostRecentPosts.status}
+                list={t("new_projects")}
+                posts={
+                  mostRecentPosts.data.length > 0
+                    ? mostRecentPosts.data
+                    : initialMostRecentPosts
+                }
+              />
+              {lastRecentPost && mostRecentPosts.data.length % 3 === 0 && (
+                <Button
+                  w="30%"
+                  variant="secondary"
+                  onClick={() => dispatch(getMostRecentProjects())}
+                >
+                  {t("load")}{" "}
+                </Button>
+              )}
+            </Stack>
+          </Box>
+        )}
+      </Box>
+    </>
   );
 }
 export const getStaticProps = wrapper.getStaticProps(
